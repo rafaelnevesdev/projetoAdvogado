@@ -34,6 +34,81 @@ document.addEventListener('DOMContentLoaded', function() {
             backToTop.classList.remove('active');
         }
     });
+    
+    // Funcionalidade de Dúvidas Frequentes nas Áreas de Atuação
+    const areaCards = document.querySelectorAll('.area-card');
+    const faqContainer = document.querySelector('.faq-container');
+    const faqAreas = document.querySelectorAll('.faq-area');
+    const areasSection = document.querySelector('.areas-grid');
+    
+    // Adiciona evento de clique para cada card de área
+    areaCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Obtém a área de atuação do atributo data-area
+            const areaType = this.getAttribute('data-area');
+            
+            // Verifica se o card já está ativo
+            const isActive = this.classList.contains('active');
+            
+            // Remove a classe active de todos os cards
+            areaCards.forEach(c => c.classList.remove('active'));
+            
+            // Esconde todas as áreas de FAQ
+            faqAreas.forEach(area => area.classList.remove('active'));
+            
+            // Se o card não estava ativo, ativa-o e mostra o FAQ correspondente
+            if (!isActive) {
+                // Ativa o card clicado
+                this.classList.add('active');
+                
+                // Mostra o container de FAQ
+                faqContainer.classList.add('visible');
+                
+                // Encontra e mostra a área de FAQ correspondente
+                const targetFaq = document.getElementById(`faq-${areaType}`);
+                if (targetFaq) {
+                    targetFaq.classList.add('active');
+                }
+                
+                // Scroll suave até o FAQ
+                setTimeout(() => {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = faqContainer.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 300);
+            } else {
+                // Se o card já estava ativo, esconde o container de FAQ
+                faqContainer.classList.remove('visible');
+            }
+        });
+    });
+    
+    // Funcionalidade de expandir/recolher perguntas do FAQ
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            
+            // Verifica se o item já está ativo
+            const isActive = faqItem.classList.contains('active');
+            
+            // Fecha todos os itens abertos
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Se o item clicado não estava ativo, abre-o
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
 
     // Slider de depoimentos
     const depoimentos = document.querySelectorAll('.depoimento');
