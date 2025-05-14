@@ -446,32 +446,17 @@ section {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.area-card:after {
-    content: "Clique para ver dúvidas frequentes";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--secondary-color);
+/* Removido o efeito de sobreposição amarela com texto */
+
+.area-card.active {
+    background-color: var(--primary-color);
     color: white;
-    padding: 8px 0;
-    font-size: 12px;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.3s ease;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
 }
 
-.area-card:hover:after {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.area-card.active:after {
-    content: "Clique para fechar";
-    opacity: 1;
-    transform: translateY(0);
+.area-card.active h3,
+.area-card.active p,
+.area-card.active .area-icon i {
+    color: white;
 }
 
 .area-icon {
