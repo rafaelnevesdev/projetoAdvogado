@@ -41,6 +41,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const faqAreas = document.querySelectorAll('.faq-area');
     const areasSection = document.querySelector('.areas-grid');
     
+    // Função para selecionar um card de área específico
+    function selectAreaCard(areaType) {
+        // Encontra o card com o data-area correspondente
+        const targetCard = document.querySelector(`.area-card[data-area="${areaType}"]`);
+        
+        if (targetCard) {
+            // Remove a classe active de todos os cards
+            areaCards.forEach(c => c.classList.remove('active'));
+            
+            // Esconde todas as áreas de FAQ
+            faqAreas.forEach(area => area.classList.remove('active'));
+            
+            // Ativa o card selecionado
+            targetCard.classList.add('active');
+            
+            // Mostra o container de FAQ
+            faqContainer.classList.add('visible');
+            
+            // Encontra e mostra a área de FAQ correspondente
+            const targetFaq = document.getElementById(`faq-${areaType}`);
+            if (targetFaq) {
+                targetFaq.classList.add('active');
+            }
+        }
+    }
+    
+    // Seleciona automaticamente o card de Direito do Consumidor - Viagens ao carregar a página
+    selectAreaCard('consumidor-viagens');
+    
     // Adiciona evento de clique para cada card de área
     areaCards.forEach(card => {
         card.addEventListener('click', function() {
@@ -50,25 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Verifica se o card já está ativo
             const isActive = this.classList.contains('active');
             
-            // Remove a classe active de todos os cards
-            areaCards.forEach(c => c.classList.remove('active'));
-            
-            // Esconde todas as áreas de FAQ
-            faqAreas.forEach(area => area.classList.remove('active'));
-            
             // Se o card não estava ativo, ativa-o e mostra o FAQ correspondente
             if (!isActive) {
-                // Ativa o card clicado
-                this.classList.add('active');
-                
-                // Mostra o container de FAQ
-                faqContainer.classList.add('visible');
-                
-                // Encontra e mostra a área de FAQ correspondente
-                const targetFaq = document.getElementById(`faq-${areaType}`);
-                if (targetFaq) {
-                    targetFaq.classList.add('active');
-                }
+                // Usa a função selectAreaCard para ativar o card e mostrar o FAQ
+                selectAreaCard(areaType);
                 
                 // Scroll suave até o FAQ
                 setTimeout(() => {
@@ -81,6 +95,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }, 300);
             } else {
+                // Remove a classe active de todos os cards
+                areaCards.forEach(c => c.classList.remove('active'));
+                
+                // Esconde todas as áreas de FAQ
+                faqAreas.forEach(area => area.classList.remove('active'));
+                
                 // Se o card já estava ativo, esconde o container de FAQ
                 faqContainer.classList.remove('visible');
             }
