@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
     <header id="header">
@@ -55,7 +56,7 @@
                 </div>
                 <div class="sobre-text">
                     <h3>Experiência e Dedicação</h3>
-                    <p>Com vasta experiência na área jurídica, Dr. Thalisson Costa oferece atendimento personalizado e soluções eficientes para seus clientes. Formado pela renomada Faculdade de Direito, possui especialização em diversas áreas do Direito.</p>
+                    <p>Com vasta experiência na área jurídica, Dr. Thalisson Costa oferece atendimento personalizado e soluções eficientes para seus clientes. Formado em Direito e pós-graduando em direito médico e da saúde.</p>
                     <p>Comprometido com a ética e a excelência, trabalha incansavelmente para defender os interesses de seus clientes, sempre buscando as melhores estratégias jurídicas para cada caso.</p>
                     <div class="qualificacoes">
                         <div class="qualificacao">
@@ -136,6 +137,13 @@
                     </div>
                     <h3>Direito Imobiliário</h3>
                     <p>Atrasos na entrega de imóveis e ações de despejo</p>
+                </div>
+                <div class="area-card" data-area="empresarial">
+                    <div class="area-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Direito Empresarial</h3>
+                    <p>Ações judiciais, prevenção de litígios e cobranças empresariais</p>
                 </div>
                 <div class="area-card" data-area="administrativo">
                     <div class="area-icon">
@@ -248,6 +256,23 @@
                     </div>
                 </div>
                 
+                <!-- Dúvidas de Direito Empresarial -->
+                <div class="faq-area" id="faq-empresarial">
+                    <h3>Dúvidas Frequentes - Direito Empresarial</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">Quais são as principais causas de ações judiciais contra empresas atualmente?</div>
+                        <div class="faq-answer">As empresas enfrentam diversas demandas judiciais, sendo as mais comuns: Cobranças e inadimplência: ações de cobrança, monitórias e execuções de títulos extrajudiciais. Contencioso trabalhista: reclamações por horas extras não pagas, verbas rescisórias e assédio moral. Infrações contratuais: descumprimento de cláusulas contratuais, principalmente em contratos de fornecimento e prestação de serviços. Propriedade intelectual: uso indevido de marcas e patentes, concorrência desleal e violação de segredos comerciais.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Como prevenir ações judiciais contra minha empresa?</div>
+                        <div class="faq-answer">A prevenção é fundamental. Algumas medidas incluem: Assessoria jurídica contínua: consultar advogados para revisar contratos e práticas empresariais. Compliance: implementar programas de conformidade para garantir o cumprimento das leis e regulamentos. Treinamento de funcionários: capacitar equipes sobre direitos e deveres, especialmente em áreas sensíveis como RH e atendimento ao cliente. Gestão de riscos: identificar e mitigar riscos legais potenciais nas operações da empresa.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Qual a diferença entre ação de cobrança, ação monitória e execução de título extrajudicial?</div>
+                        <div class="faq-answer">• Ação de Cobrança: usada quando o credor tem uma dívida, mas não possui um documento com força de título executivo. Exemplo: prestação de serviços sem contrato assinado. • Ação Monitória: usada quando o credor tem um documento sem força executiva, mas que demonstra a existência da dívida, como um boleto, nota fiscal, ou e-mail. • Execução de Título Extrajudicial: usada quando se tem um título executivo (ex: cheque, nota promissória, contrato com 2 testemunhas). Nessa ação, não há discussão — o devedor já é intimado a pagar em 3 dias ou indicar bens à penhora.</div>
+                    </div>
+                </div>
+                
                 <!-- Dúvidas de Direito de Família e Sucessões -->
                 <div class="faq-area" id="faq-familia">
                     <h3>Dúvidas Frequentes - Direito de Família e Sucessões</h3>
@@ -331,43 +356,43 @@
                 <h2>Depoimentos de Clientes</h2>
                 <div class="separator"></div>
             </div>
-            <div class="depoimentos-slider">
-                <div class="depoimento">
-                    <div class="depoimento-content">
-                        <div class="aspas"><i class="fas fa-quote-left"></i></div>
-                        <p>O Dr. Thalisson foi fundamental na resolução do meu caso. Sua dedicação e conhecimento jurídico fizeram toda a diferença. Recomendo seus serviços sem hesitação.</p>
-                        <div class="cliente-info">
-                            <h4>Carlos Oliveira</h4>
-                            <p>Empresário</p>
+            <div class="swiper depoimentos-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="depoimento-content">
+                            <div class="aspas"><i class="fas fa-quote-left"></i></div>
+                            <p>O Dr. Thalisson foi fundamental na resolução do meu caso. Sua dedicação e conhecimento jurídico fizeram toda a diferença. Recomendo seus serviços sem hesitação.</p>
+                            <div class="cliente-info">
+                                <h4>Carlos Oliveira</h4>
+                                <p>Empresário</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="depoimento-content">
+                            <div class="aspas"><i class="fas fa-quote-left"></i></div>
+                            <p>Excelente profissional! Atendimento humanizado e resultados além das expectativas. O Dr. Thalisson conduziu meu processo com maestria e conseguimos um resultado muito favorável.</p>
+                            <div class="cliente-info">
+                                <h4>Ana Paula Santos</h4>
+                                <p>Administradora</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="depoimento-content">
+                            <div class="aspas"><i class="fas fa-quote-left"></i></div>
+                            <p>Agradeço imensamente ao Dr. Thalisson pela competência e profissionalismo. Seu conhecimento jurídico e dedicação foram essenciais para o sucesso do meu caso.</p>
+                            <div class="cliente-info">
+                                <h4>Roberto Mendes</h4>
+                                <p>Engenheiro</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="depoimento">
-                    <div class="depoimento-content">
-                        <div class="aspas"><i class="fas fa-quote-left"></i></div>
-                        <p>Excelente profissional! Atendimento humanizado e resultados além das expectativas. O Dr. Thalisson conduziu meu processo com maestria e conseguimos um resultado muito favorável.</p>
-                        <div class="cliente-info">
-                            <h4>Ana Paula Santos</h4>
-                            <p>Administradora</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="depoimento">
-                    <div class="depoimento-content">
-                        <div class="aspas"><i class="fas fa-quote-left"></i></div>
-                        <p>Agradeço imensamente ao Dr. Thalisson pela competência e profissionalismo. Seu conhecimento jurídico e dedicação foram essenciais para o sucesso do meu caso.</p>
-                        <div class="cliente-info">
-                            <h4>Roberto Mendes</h4>
-                            <p>Engenheiro</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="slider-controls">
-                <span class="prev"><i class="fas fa-chevron-left"></i></span>
-                <span class="next"><i class="fas fa-chevron-right"></i></span>
-            </div>
-
         </div>
     </section>
 
@@ -402,8 +427,8 @@
                         </div>
                     </div>
                     <div class="social-media">
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/thalisson_costa.adv" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/thalisson-yan-oliveira-costa-399279304" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="contato-form">
@@ -414,7 +439,7 @@
                         <p><i class="fas fa-check"></i> Consulta inicial gratuita</p>
                         <p><i class="fas fa-check"></i> Resposta em até 24 horas</p>
                     </div>
-                    <a href="https://wa.me/5511987654321?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." class="btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/5582987528158?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." class="btn-whatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i> Iniciar Conversa no WhatsApp
                     </a>
                 </div>
@@ -468,6 +493,7 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -538,71 +538,114 @@ section {
 }
 
 /* Depoimentos */
-.depoimentos-slider {
-    display: flex;
-    overflow: hidden;
-    position: relative;
+.depoimentos {
+    background-color: #f9f9f9;
+    padding: 100px 0;
 }
 
-.depoimento {
-    min-width: 100%;
-    transition: transform 0.5s ease;
+/* Depoimentos Swiper */
+.depoimentos-swiper {
+    width: 100%;
+    padding-bottom: 60px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px 0;
 }
 
 .depoimento-content {
     background-color: #fff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: var(--shadow);
-    margin: 10px;
     position: relative;
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .aspas {
-    font-size: 30px;
+    font-size: 36px;
     color: var(--secondary-color);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
 .depoimento-content p {
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: var(--gray-color);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.cliente-info {
+    margin-top: 20px;
 }
 
 .cliente-info h4 {
     font-size: 18px;
     color: var(--primary-color);
     margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .cliente-info p {
     font-size: 14px;
-    font-style: normal;
+    color: var(--gray-color);
 }
 
-.slider-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.prev, .next {
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    color: #fff;
+/* Estilização dos botões de navegação do Swiper */
+.depoimentos-swiper .swiper-button-next,
+.depoimentos-swiper .swiper-button-prev {
+    width: 50px;
+    height: 50px;
+    background-color: white;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
     transition: all 0.3s ease;
 }
 
-.prev:hover, .next:hover {
-    background-color: var(--secondary-color);
+.depoimentos-swiper .swiper-button-next:after,
+.depoimentos-swiper .swiper-button-prev:after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.depoimentos-swiper .swiper-button-next:hover,
+.depoimentos-swiper .swiper-button-prev:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+.depoimentos-swiper .swiper-button-next {
+    right: 10px;
+}
+
+.depoimentos-swiper .swiper-button-prev {
+    left: 10px;
+}
+
+.depoimentos-swiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.depoimentos-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 /* Contato */

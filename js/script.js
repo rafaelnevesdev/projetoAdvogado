@@ -130,37 +130,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // Slider de depoimentos
-    const depoimentos = document.querySelectorAll('.depoimento');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let currentSlide = 0;
-
-    function showSlide(n) {
-        depoimentos.forEach((depoimento, index) => {
-            depoimento.style.transform = `translateX(${(index - n) * 100}%)`;
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % depoimentos.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + depoimentos.length) % depoimentos.length;
-        showSlide(currentSlide);
-    }
-
-    // Inicializar slider
-    showSlide(currentSlide);
-
-    // Event listeners para os botões do slider
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-
-    // Auto slide a cada 5 segundos
-    setInterval(nextSlide, 5000);
+    // Inicialização do Swiper para depoimentos
+    const depoimentosSwiper = new Swiper('.depoimentos-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 800,
+        grabCursor: true,
+        keyboard: {
+            enabled: true,
+        },
+        a11y: {
+            prevSlideMessage: 'Depoimento anterior',
+            nextSlideMessage: 'Próximo depoimento',
+            firstSlideMessage: 'Primeiro depoimento',
+            lastSlideMessage: 'Último depoimento',
+            paginationBulletMessage: 'Ir para o depoimento {{index}}',
+        },
+    });
 
     // Formulário de contato
     const formContato = document.getElementById('form-contato');
